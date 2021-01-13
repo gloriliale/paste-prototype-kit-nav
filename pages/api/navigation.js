@@ -2,6 +2,7 @@ const fs = require('fs').promises;
 const path = require('path');
 
 const walk = async (dir) => {
+  const dir = path.resolve('./', dir);
   let files = await fs.readdir(dir);
   files = await Promise.all(
     files.map(async (file) => {
